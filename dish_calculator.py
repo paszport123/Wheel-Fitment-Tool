@@ -265,6 +265,14 @@ if dish_type == "1":
         sprocket_surface_to_swingarm_mm
     )
 
+    if brake_side_clearance > sprocket_side_clearance:
+
+        final_dish = final_dish + ((brake_side_clearance - sprocket_side_clearance) / 2)
+
+    else:
+
+        final_dish = final_dish
+
     print(f"Dish: {dish} mm")
 
     if sprocket_adapter_offset_mm > 0:
