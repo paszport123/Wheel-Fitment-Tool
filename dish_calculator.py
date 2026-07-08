@@ -290,10 +290,12 @@ if dish_type == "1":
     else:
         print(f"(---Final dish---): {dish + wheel_centering} mm")
 
-
-    print("after wheel centering")
-    print(f"brake_side_clearance: {brake_side_clearance - wheel_centering} mm")
-    print(f"sprocket_side_clearance: {sprocket_side_clearance + wheel_centering} mm")
+    if wheel_centering > 0:
+        print("after wheel centering")
+        print(f"brake_side_clearance: {brake_side_clearance - wheel_centering} mm")
+        print(f"sprocket_side_clearance: {sprocket_side_clearance + wheel_centering} mm")
+    else:
+        print("...")
 
 elif dish_type == "2":
     motorcycle_id = choose_motorcycle(cursor)
