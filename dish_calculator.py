@@ -267,13 +267,16 @@ if dish_type == "1":
 
     if brake_side_clearance > sprocket_side_clearance:
 
-        final_dish = final_dish + ((brake_side_clearance - sprocket_side_clearance) / 2)
+        wheel_centering = (brake_side_clearance - sprocket_side_clearance) / 2
 
     else:
 
-        final_dish = final_dish
+        wheel_centering = 0
 
+    print("before corrections")
     print(f"Dish: {dish} mm")
+    print(f"brake_side_clearance: {brake_side_clearance} mm")
+    print(f"sprocket_side_clearance: {sprocket_side_clearance} mm")
 
     if sprocket_adapter_offset_mm > 0:
         print(
@@ -281,14 +284,16 @@ if dish_type == "1":
             f"-{sprocket_adapter_offset_mm} mm"
         )
         print(
-            f"Final dish measured without adapter: "
-            f"{final_dish} mm"
+            f"(---Final dish---) measured without adapter: "
+            f"{final_dish + wheel_centering} mm"
         )
     else:
-        print(f"Final dish: {dish} mm")
+        print(f"(---Final dish---): {dish + wheel_centering} mm")
 
-    print(f"brake_side_clearance: {brake_side_clearance} mm")
-    print(f"sprocket_side_clearance: {sprocket_side_clearance} mm")
+
+    print("after wheel centering")
+    print(f"brake_side_clearance: {brake_side_clearance - wheel_centering} mm")
+    print(f"sprocket_side_clearance: {sprocket_side_clearance + wheel_centering} mm")
 
 elif dish_type == "2":
     motorcycle_id = choose_motorcycle(cursor)
