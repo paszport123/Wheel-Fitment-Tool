@@ -1,19 +1,21 @@
-import sqlite3
+# import sqlite3
 
-conn = sqlite3.connect("database.db")
-cursor = conn.cursor()
-
-
-cursor.execute("""
-UPDATE motorcycle
-SET
-    front_fork_width_mm = ?,
-    front_brake_surface_to_fork_mm = ?
-WHERE id = ?
-""", (118, 14, 2))
+# conn = sqlite3.connect("database.db")
+# cursor = conn.cursor()
 
 
-conn.commit()
-conn.close()
+# cursor.execute("""
+# UPDATE motorcycle
+# SET rear_swingarm_width_mm = ?
+# WHERE brand = ? AND model = ?
+# """, (
+#     198,
+#     "Talaria",
+#     "Komodo"
+# ))
 
-print("success.")
+
+# conn.commit()
+# conn.close()
+
+# print("success.")
