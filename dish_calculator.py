@@ -21,18 +21,12 @@ from calculation_functions import (
 conn = sqlite3.connect("database.db")
 cursor = conn.cursor()
 
-
-
-
 # choose dish type
 print("\n---DISH CALCULATOR---")
 print("#1 Rear dish")
 print("#2 Front dish")
 
 dish_type = input("Choose dish type: ")
-
-
-
 
 if dish_type == "1":
 
@@ -70,13 +64,6 @@ if dish_type == "1":
         actual_tire_width_mm = measurement_data[0]
         actual_tire_height_mm = measurement_data[1]
 
-    
-
-
-
-
-    
-    
     dish = calculate_dish(
         actual_tire_width_mm,
         actual_rim_width_mm
@@ -104,7 +91,7 @@ if dish_type == "1":
 
     print("\n---SELECTED SETUP---")
     print(f"Motorcycle: {motorcycle_brand} {motorcycle_model}")
-    print(f"Rim: {diameter_inch} {width_inch}")
+    print(f"Rim: {diameter_inch}x{width_inch}")
     
     if tire_id is None:
         print("Tire: No tire")
@@ -124,34 +111,45 @@ if dish_type == "1":
             f"-{sprocket_adapter_offset_mm} mm"
         )
         print(
-            f"\n---FINAL RESULTS--- measured without adapter! "
-            f"{final_dish + wheel_centering} mm"
+            f"\n---FINAL RESULTS--- measured without adapter!"
+            f"\ndish: {final_dish + wheel_centering} mm"
         )
     else:
         print(
             f"\n---FINAL RESULTS---"
-            f"{dish + wheel_centering} mm")
+            f"\ndish: {dish + wheel_centering} mm")
 
     if wheel_centering > 0:
-        print("after wheel centering")
         print(f"brake_side_clearance: {brake_side_clearance - wheel_centering} mm")
         print(f"sprocket_side_clearance: {sprocket_side_clearance + wheel_centering} mm")
     else:
-        print("...")
+        print(" ")
+    
+    print("\nMeasured from sprocket surface!\n")
 
 
 
 elif dish_type == "2":
+    
     motorcycle_id = choose_motorcycle(cursor)
     rim_id = choose_rim(cursor)
 
+    # get data
     motorcycle_data = get_motorcycle_data(cursor, motorcycle_id)
     rim_data = get_rim_data(cursor, rim_id)
 
+    motorcycle_brand = motorcycle_data[0]
+    motorcycle_model = motorcycle_data[1]
     front_fork_width_mm = motorcycle_data[3]
     front_brake_surface_to_fork_mm = motorcycle_data[4]
     actual_rim_width_mm = rim_data[2]
 
+    diameter_inch = rim_data[0]
+    width_inch = rim_data[1]
+    actual_rim_width_mm = rim_data[2]
+
+    
+    
     hub_machining_correction_mm = float(
         input("\nHub machining correction [mm]: ")
     )
@@ -163,10 +161,17 @@ elif dish_type == "2":
         hub_machining_correction_mm
     )
 
-    print(f"\nFront dish: {front_dish:.1f} mm")
+    print("\n---SELECTED SETUP---")
+    print(f"Motorcycle: {motorcycle_brand} {motorcycle_model}")
+    print(f"Rim: {diameter_inch}x{width_inch}")
+    
+    print("\n---FINAL RESULT---")
+    print(f"\ndish: {front_dish:.1f} mm")
+    print(" ")
+    print("Measured from brake surface!\n")
 
 else:
-    print("Invalid choice.")
+    print("Invalid choice.\n")
     
 
 conn.close()
