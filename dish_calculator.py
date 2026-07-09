@@ -140,8 +140,8 @@ elif dish_type == "2":
 
     motorcycle_brand = motorcycle_data[0]
     motorcycle_model = motorcycle_data[1]
-    front_fork_width_mm = motorcycle_data[3]
-    front_brake_surface_to_fork_mm = motorcycle_data[4]
+    front_fork_width_mm = motorcycle_data[5]
+    front_brake_surface_to_fork_mm = motorcycle_data[6]
     actual_rim_width_mm = rim_data[2]
 
     diameter_inch = rim_data[0]
