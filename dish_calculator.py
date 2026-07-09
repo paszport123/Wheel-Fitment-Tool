@@ -102,7 +102,7 @@ if dish_type == "1":
 
         wheel_centering = 0
 
-    print("---SELECTED SETUP---")
+    print("\n---SELECTED SETUP---")
     print(f"Motorcycle: {motorcycle_brand} {motorcycle_model}")
     print(f"Rim: {diameter_inch} {width_inch}")
     
@@ -113,7 +113,7 @@ if dish_type == "1":
 
 
 
-    print("before corrections")
+    print("\n---CALCULATIONS---")
     print(f"Dish: {dish} mm")
     print(f"brake_side_clearance: {brake_side_clearance} mm")
     print(f"sprocket_side_clearance: {sprocket_side_clearance} mm")
@@ -124,11 +124,13 @@ if dish_type == "1":
             f"-{sprocket_adapter_offset_mm} mm"
         )
         print(
-            f"(---Final dish---) measured without adapter: "
+            f"\n---FINAL RESULTS--- measured without adapter! "
             f"{final_dish + wheel_centering} mm"
         )
     else:
-        print(f"(---Final dish---): {dish + wheel_centering} mm")
+        print(
+            f"\n---FINAL RESULTS---"
+            f"{dish + wheel_centering} mm")
 
     if wheel_centering > 0:
         print("after wheel centering")
