@@ -6,13 +6,11 @@
 
 # cursor.execute("""
 # UPDATE motorcycle
-# SET rear_swingarm_width_mm = ?
+# SET front_dish_required = 1
 # WHERE brand = ? AND model = ?
-# """, (
-#     198,
-#     "Talaria",
-#     "Komodo"
-# ))
+# """, ("Talaria ", "Komodo"))
+
+
 
 
 # conn.commit()
