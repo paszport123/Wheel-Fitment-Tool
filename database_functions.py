@@ -1,11 +1,20 @@
 import sqlite3
 
-def choose_motorcycle(cursor):
+def choose_motorcycle(cursor, dish_type):
 
-    cursor.execute("""
-    SELECT id, brand, model
-    FROM motorcycle
-    """)
+    if dish_type == "2":
+        cursor.execute("""
+            SELECT id, brand, model
+            FROM motorcycle
+            WHERE front_dish_required = 1
+            ORDER BY brand, model
+        """)
+    else:
+        cursor.execute("""
+            SELECT id, brand, model
+            FROM motorcycle
+            ORDER BY brand, model
+        """)
 
     motorcycles = cursor.fetchall()
 

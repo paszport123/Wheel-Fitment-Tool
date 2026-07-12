@@ -131,7 +131,7 @@ if dish_type == "1":
 
 elif dish_type == "2":
     
-    motorcycle_id = choose_motorcycle(cursor)
+    motorcycle_id = choose_motorcycle(cursor, dish_type)
     rim_id = choose_rim(cursor)
 
     # get data
