@@ -30,7 +30,7 @@ dish_type = input("Choose dish type: ")
 
 if dish_type == "1":
 
-    motorcycle_id = choose_motorcycle(cursor)
+    motorcycle_id = choose_motorcycle(cursor, dish_type)
     rim_id = choose_rim(cursor)
     tire_id = choose_tire(cursor, rim_id)
 
@@ -166,7 +166,7 @@ elif dish_type == "2":
     print(f"Rim: {diameter_inch}x{width_inch}")
     
     print("\n---FINAL RESULT---")
-    print(f"\ndish: {front_dish:.1f} mm")
+    print(f"dish: {front_dish:.1f} mm")
     print(" ")
     print("Measured from brake surface!\n")
 
