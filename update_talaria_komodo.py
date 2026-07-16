@@ -6,7 +6,7 @@ cursor = conn.cursor()
 
 cursor.execute("""
 UPDATE motorcycle
-SET front_fork_width_mm = 114
+SET sprocket_surface_to_swingarm_mm = -9
 WHERE brand = ? AND model = ?
 """, ("Talaria", "Komodo"))
 

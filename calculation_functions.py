@@ -15,10 +15,14 @@ def calculate_front_dish(
     front_fork_width_mm,
     actual_rim_width_mm,
     front_brake_surface_to_fork_mm,
-    hub_machining_correction_mm = 0      
+    powdercoated_correction = 0,
+    hub_machining_correction_mm = 0
 ):
+    
+    corrected_rim_width = actual_rim_width_mm + powdercoated_correction
+
     zero_position = (
-        front_fork_width_mm - actual_rim_width_mm
+        front_fork_width_mm - corrected_rim_width
     ) / 2
 
     corrected_brake_surface = (

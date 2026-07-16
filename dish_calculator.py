@@ -154,10 +154,15 @@ elif dish_type == "2":
         input("\nHub machining correction [mm]: ")
     )
 
+    powdercoated_correction = float(
+    input("\nPowder coated? [Yes/No]: ")
+    )
+
     front_dish = calculate_front_dish(
         front_fork_width_mm,
         actual_rim_width_mm,
         front_brake_surface_to_fork_mm,
+        powdercoated_correction,
         hub_machining_correction_mm
     )
 
