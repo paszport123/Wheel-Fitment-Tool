@@ -1,5 +1,6 @@
 MIN_CHAIN_CLEARANCE_MM = 5
 
+
 def calculate_dish(
     actual_tire_width_mm, 
     actual_width_mm
@@ -15,11 +16,11 @@ def calculate_front_dish(
     front_fork_width_mm,
     actual_rim_width_mm,
     front_brake_surface_to_fork_mm,
-    powdercoated_correction = 0,
+    powder_coat_correction_mm = False,
     hub_machining_correction_mm = 0
 ):
     
-    corrected_rim_width = actual_rim_width_mm + powdercoated_correction
+    corrected_rim_width = actual_rim_width_mm + powder_coat_correction_mm
 
     zero_position = (
         front_fork_width_mm - corrected_rim_width

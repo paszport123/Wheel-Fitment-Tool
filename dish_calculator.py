@@ -154,15 +154,24 @@ elif dish_type == "2":
         input("\nHub machining correction [mm]: ")
     )
 
-    powdercoated_correction = float(
-    input("\nPowder coated? [Yes/No]: ")
-    )
+    print("\nIs the rim powder coated?")
+    print("1 - Yes")
+    print("2 - No")
+
+    powder_coated_choice = input("Choose option: ")
+
+    POWDER_COAT_CORRECTION_MM = 0.5
+
+    if powder_coated_choice == "1":
+        powder_coat_correction_mm = POWDER_COAT_CORRECTION_MM
+    else:
+        powder_coat_correction_mm = 0
 
     front_dish = calculate_front_dish(
         front_fork_width_mm,
         actual_rim_width_mm,
         front_brake_surface_to_fork_mm,
-        powdercoated_correction,
+        powder_coat_correction_mm,
         hub_machining_correction_mm
     )
 
