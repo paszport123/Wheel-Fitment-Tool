@@ -158,7 +158,19 @@ elif dish_type == "2":
     print("1 - Yes")
     print("2 - No")
 
-    powder_coated_choice = input("Choose option: ")
+    while True:
+        powder_coated_choice = input("Choose option: ")
+
+        if powder_coated_choice == "1":
+            powder_coated = True
+            break
+
+        elif powder_coated_choice == "2":
+            powder_coated = False
+            break
+
+        else:
+            print("Invalid choice. Enter 1 - Yes or 2 - No.")
 
     POWDER_COAT_CORRECTION_MM = 0.5
 

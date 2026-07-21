@@ -23,11 +23,17 @@ def choose_motorcycle(cursor, dish_type):
     for index, motorcycle in enumerate(motorcycles, start=1):
         print(f"{index} - {motorcycle[1]} {motorcycle[2]}")
 
-    choice = int(input("\nChoose motorcycle: "))
+    while True:
+        try:
+            choice = int(input("\nChoose motorcycle: "))
 
-    selected_motorcycle_id = motorcycles[choice - 1][0]
+            if 1 <= choice <= len(motorcycles):
+                return motorcycles[choice - 1][0]
 
-    return selected_motorcycle_id
+            print("Invalid number. Try again.")
+
+        except ValueError:
+            print("Please enter a number.")
 
 def choose_rim(cursor):
 
@@ -43,11 +49,17 @@ def choose_rim(cursor):
     for index, rim in enumerate(rims, start=1):
         print(f"{index} - {rim[1]}x{rim[2]}")
 
-    choice = int(input("\nChoose rim: "))
+    while True:
+        try:
+            choice = int(input("\nChoose rim: "))
 
-    selected_rim_id = rims[choice -1][0]
+            if 1 <= choice <= len(rims):
+                return rims[choice - 1][0]
 
-    return selected_rim_id
+            print("Invalid number. Try again.")
+
+        except ValueError:
+            print("Please enter a number.")
 
 def choose_tire(cursor, rim_id):
 
@@ -78,14 +90,20 @@ def choose_tire(cursor, rim_id):
             f"{tire[3]}/{tire[4]}-{tire[5]}"
         )
 
-    choice = int(input("\nChoose tire: "))
+    while True:
+        try:
+            choice = int(input("\nChoose tire: "))
 
-    if choice == 0:
-        return None
+            if choice == 0:
+                return None
 
-    selected_tire_id = tires[choice - 1][0]
+            if 1 <= choice <= len(tires):
+                return tires[choice - 1][0]
 
-    return selected_tire_id
+            print("Invalid number. Try again.")
+
+        except ValueError:
+            print("Please enter a number.")
 
 def get_motorcycle_data(cursor, motorcycle_id):
 
