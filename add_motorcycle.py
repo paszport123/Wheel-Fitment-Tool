@@ -5,7 +5,7 @@ brand = input("Motorcycle brand: ")
 model = input("Motorcycle model: ")
 
 rear_swingarm_width = int(input("Rear swingarm width [mm]: "))
-sprocket_surface_to_swingarm = int(input("Sprocket surface to swingarm [mm]: "))
+sprocket_surface_to_swingarm = float(input("Sprocket surface to swingarm [mm]: "))
 sprocket_adapter_offset_mm = float(input("sprocket adapter offset [mm]: "))
 
 front_fork_width_mm = float(input("Front fork width at axle [mm]: "))
