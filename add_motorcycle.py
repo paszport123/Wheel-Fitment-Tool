@@ -4,7 +4,7 @@ import sqlite3
 brand = input("Motorcycle brand: ")
 model = input("Motorcycle model: ")
 
-rear_swingarm_width = int(input("Rear swingarm width [mm]: "))
+rear_swingarm_width = float(input("Rear swingarm width [mm]: "))
 sprocket_surface_to_swingarm = float(input("Sprocket surface to swingarm [mm]: "))
 sprocket_adapter_offset_mm = float(input("sprocket adapter offset [mm]: "))
 
