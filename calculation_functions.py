@@ -1,5 +1,6 @@
-MIN_CHAIN_CLEARANCE_MM = 7
-
+MIN_CHAIN_CLEARANCE_MM = 9
+# for ultrabee 12
+# for lightbee 6-7 or when offroad dunlp 90/100 5, because of collision with swingarm?
 
 def calculate_dish(
     actual_tire_width_mm, 
