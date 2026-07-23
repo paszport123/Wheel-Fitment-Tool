@@ -102,14 +102,15 @@ if dish_type == "1":
     else:
         print(f"Tire: {tire_data[0]} {tire_data[1]} {tire_data[2]}/{tire_data[3]}-{tire_data[4]}")
 
+    print(f"minimum chain clearance: {MIN_CHAIN_CLEARANCE_MM} mm")
+    print(f"chain overhang: {chain_overhang_mm} mm")
+
 
 
     print("\n---CALCULATIONS---")
     print(f"Dish: {dish} mm")
     print(f"brake_side_clearance: {brake_side_clearance} mm")
     print(f"sprocket_side_clearance: {sprocket_side_clearance} mm")
-    print(f"minimum chain clearance: {MIN_CHAIN_CLEARANCE_MM} mm")
-    print(f"chain overhang: {chain_overhang_mm} mm")
 
     if sprocket_adapter_offset_mm > 0:
         print(
