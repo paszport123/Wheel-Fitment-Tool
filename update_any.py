@@ -8,7 +8,7 @@ cursor.execute("""
 UPDATE motorcycle
 SET chain_overhang_mm = 5
 WHERE brand = ? AND model = ?
-""", ("E-ride", "Pro SS 3.0"))
+""", ("Sur-Ron", "Light Bee"))
 
 # cursor.execute("""
 # ALTER TABLE motorcycle
