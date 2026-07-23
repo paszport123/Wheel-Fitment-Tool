@@ -6,7 +6,7 @@ cursor = conn.cursor()
 
 cursor.execute("""
 UPDATE motorcycle
-SET chain_overhang_mm = 
+SET chain_overhang_mm = 5
 WHERE brand = ? AND model = ?
 """, ("E-ride", "Pro SS 3.0"))
 

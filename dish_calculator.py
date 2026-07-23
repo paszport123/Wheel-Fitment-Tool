@@ -1,5 +1,7 @@
 import sqlite3
 
+from calculation_functions import MIN_CHAIN_CLEARANCE_MM
+
 from database_functions import (
     choose_motorcycle,
     choose_rim,
@@ -44,6 +46,7 @@ if dish_type == "1":
     rear_swingarm_width_mm = motorcycle_data[2]
     sprocket_surface_to_swingarm_mm = motorcycle_data[3]
     sprocket_adapter_offset_mm = motorcycle_data[4]
+    chain_overhang_mm = motorcycle_data[7]
 
     diameter_inch = rim_data[0]
     width_inch = rim_data[1]
@@ -66,7 +69,8 @@ if dish_type == "1":
 
     dish = calculate_dish(
         actual_tire_width_mm,
-        actual_rim_width_mm
+        actual_rim_width_mm,
+        chain_overhang_mm
     )
 
     final_dish = dish - sprocket_adapter_offset_mm
@@ -104,6 +108,8 @@ if dish_type == "1":
     print(f"Dish: {dish} mm")
     print(f"brake_side_clearance: {brake_side_clearance} mm")
     print(f"sprocket_side_clearance: {sprocket_side_clearance} mm")
+    print(f"minimum chain clearance: {MIN_CHAIN_CLEARANCE_MM} mm")
+    print(f"chain overhang: {chain_overhang_mm} mm")
 
     if sprocket_adapter_offset_mm > 0:
         print(
