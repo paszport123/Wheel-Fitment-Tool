@@ -115,7 +115,8 @@ def get_motorcycle_data(cursor, motorcycle_id):
         sprocket_surface_to_swingarm_mm,
         sprocket_adapter_offset_mm,
         front_fork_width_mm,
-        front_brake_surface_to_fork_mm
+        front_brake_surface_to_fork_mm,
+        chain_overhang_mm
     FROM motorcycle
     WHERE id = ?
     """, (motorcycle_id,))
