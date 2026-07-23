@@ -1,4 +1,4 @@
-MIN_CHAIN_CLEARANCE_MM = 5
+MIN_CHAIN_CLEARANCE_MM = 7
 
 
 def calculate_dish(
