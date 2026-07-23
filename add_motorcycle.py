@@ -10,6 +10,7 @@ sprocket_adapter_offset_mm = float(input("sprocket adapter offset [mm]: "))
 
 front_fork_width_mm = float(input("Front fork width at axle [mm]: "))
 front_brake_surface_to_fork_mm = float(input("Front brake surface to fork [mm]: "))
+minimum_chain_clearance_mm = float(input("minimum chain clearance (5mm + ((chain width - sprocket width) / 2) [mm]"))
 
 notes = input("Notes: ")
 
@@ -27,6 +28,7 @@ INSERT INTO motorcycle (
     sprocket_adapter_offset_mm,
     front_fork_width_mm,
     front_brake_surface_to_fork_mm,
+    minimum_chain_clearance_mm,
     notes
 )
 VALUES (?, ?, ?, ?, ?, ?, ?, ?)

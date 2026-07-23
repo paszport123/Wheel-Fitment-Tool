@@ -6,12 +6,14 @@ cursor = conn.cursor()
 
 cursor.execute("""
 UPDATE motorcycle
-SET front_fork_width_mm = 112
+SET chain_overhang_mm = 
 WHERE brand = ? AND model = ?
 """, ("E-ride", "Pro SS 3.0"))
 
-
-
+cursor.execute("""
+ALTER TABLE motorcycle
+ADD COLUMN chain_overhang_mm REAL DEFAULT 0;
+""")
 
 conn.commit()
 conn.close()
