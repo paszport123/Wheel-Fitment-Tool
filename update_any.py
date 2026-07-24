@@ -6,9 +6,9 @@ cursor = conn.cursor()
 
 cursor.execute("""
 UPDATE motorcycle
-SET chain_overhang_mm = 5
+SET sprocket_surface_to_swingarm_mm = -4.5
 WHERE brand = ? AND model = ?
-""", ("Sur-Ron", "Light Bee"))
+""", ("Talaria", "Komodo"))
 
 # cursor.execute("""
 # ALTER TABLE motorcycle
