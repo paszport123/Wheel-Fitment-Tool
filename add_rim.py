@@ -1,9 +1,9 @@
 import sqlite3
 
 # get data from user
-diameter = float(input("Rim diameter [inch]: "))
-width = float(input("Rim width [inch]: "))
-actual_width = float(input("Actual rim width [mm]: "))
+diameter_inch = float(input("Rim diameter [inch]: "))
+width_inch = float(input("Rim width [inch]: "))
+actual_width_mm = float(input("Actual rim width [mm]: "))
 notes = input("Notes [TEXT]: ")
 
 # connect to database
@@ -19,7 +19,7 @@ INSERT INTO rims (
     notes
 )
 VALUES (?, ?, ?, ?)
-""", (diameter, width, actual_width, notes))
+""", (diameter_inch, width_inch, actual_width_mm, notes))
 
 # save changes
 conn.commit()

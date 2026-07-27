@@ -28,8 +28,8 @@ for rim in cursor.fetchall():
 rim_id = int(input("\nChoose rim ID: "))
 
 # Add measurement
-actual_tire_width = float(input("Actual tire width [mm]: "))
-actual_tire_height = float(input("Actual tire height [mm]: "))
+actual_tire_width_mm = float(input("Actual tire width [mm]: "))
+actual_tire_height_mm = float(input("Actual tire height [mm]: "))
 notes = input("Notes: ")
 
 cursor.execute("""
@@ -44,8 +44,8 @@ VALUES (?, ?, ?, ?, ?)
 """, (
     tire_id,
     rim_id,
-    actual_tire_width,
-    actual_tire_height,
+    actual_tire_width_mm,
+    actual_tire_height_mm,
     notes
 ))
 

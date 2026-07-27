@@ -6,7 +6,7 @@ model = input("Tire model: ")
 
 width = float(input("Tire width [mm]: "))
 profile = float(input("Tire profile: "))
-rim_diameter = float(input("Rim diameter [inch]: "))
+rim_diameter_inch = float(input("Rim diameter [inch]: "))
 
 notes = input("Notes: ")
 
@@ -30,7 +30,7 @@ VALUES (?, ?, ?, ?, ?, ?)
     model,
     width,
     profile,
-    rim_diameter,
+    rim_diameter_inch,
     notes
 ))
 
