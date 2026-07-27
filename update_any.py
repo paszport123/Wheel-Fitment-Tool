@@ -3,12 +3,15 @@ import sqlite3
 conn = sqlite3.connect("database.db")
 cursor = conn.cursor()
 
+cursor.execute("PRAGMA table_info(motorcycle)")
+for column in cursor.fetchall():
+    print(column[1])
 
-cursor.execute("""
-UPDATE motorcycle
-SET sprocket_surface_to_swingarm_mm = -4.5
-WHERE brand = ? AND model = ?
-""", ("Talaria", "Komodo"))
+# cursor.execute("""
+# UPDATE tire_rim_measurements
+# SET actual_tire_width_mm = 142
+# WHERE tire_id = ? AND rim_id = ?
+# """, ("9", "12"))
 
 # cursor.execute("""
 # ALTER TABLE motorcycle
